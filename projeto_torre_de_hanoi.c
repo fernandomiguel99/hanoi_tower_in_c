@@ -1,6 +1,6 @@
 // Projeto: Pilha Dinâmica - Torre de Hanoi
 // Aluno: Fernando Miguel D'Andrea Lima RA:11.118.771-2
-//link do vídeo:--------------------
+// link do vídeo: https://youtu.be/-yAtpU_9V7E
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,7 +28,7 @@ void initialize(struct List *list)
 
 void push(struct List *list, int value)
 {
-    struct Node *new_node =malloc(sizeof(struct Node));
+    struct Node *new_node = malloc(sizeof(struct Node));
     new_node->data = value;
     new_node->next_node = NULL;
     if(list->size == 0)
@@ -49,16 +49,16 @@ void pop(struct List *list)
         puts("Lista vazia");
     else
     {
-        struct Node *aux1 = list->start;
-        list->start = aux1->next_node;
-        free(aux1);
+        struct Node *aux = list->start;
+        list->start = aux->next_node;
+        free(aux);
         list->size--;
     }
 }
 
-void display(struct List *list, struct List *list2, struct List *list3)
+void display(struct List *list1, struct List *list2, struct List *list3)
 {
-    struct Node *aux1 = list->start;
+    struct Node *aux1 = list1->start;
     struct Node *aux2 = list2->start;
     struct Node *aux3 = list3->start;
     printf("\n|\t|\t|\n");
@@ -105,7 +105,7 @@ void display(struct List *list, struct List *list2, struct List *list3)
             aux3 = aux3->next_node;
         }
     }
-    puts("\n------------------\n");
+    puts("\n===================\n");
     free(aux1);
     free(aux2);
     free(aux3);
@@ -123,7 +123,8 @@ int main()
     puts("Digite a quantidade de discos do pino inicial:");
     scanf(" %d", &n_disk);
 
-    while(n_disk>0){
+    while(n_disk>0)
+    {
         push(&origin, n_disk);
         n_disk = n_disk - 1;
     }
