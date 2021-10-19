@@ -1,6 +1,6 @@
 // Projeto: Pilha Dinâmica - Torre de Hanoi
 // Aluno: Fernando Miguel D'Andrea Lima RA:11.118.771-2
-// link do vídeo: https://youtu.be/-yAtpU_9V7E
+// link do vídeo: https://youtu.be/z5uH9tE_iiQ
 
 #include <stdio.h>
 #include <stdlib.h>
